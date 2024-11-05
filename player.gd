@@ -12,10 +12,10 @@ func _process(delta):
 		$AnimatedSprite2D.play("Idle")
 	else:
 		$AnimatedSprite2D.play("Walk")
-		if Input.is_action_just_pressed("right"):
-			$AnimatedSprite2D.flip_h = false
-		elif Input.is_action_just_pressed("left"):
+		if velocity.x < 0:
 			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 
 func _physics_process(delta):
 	# Add the gravity.

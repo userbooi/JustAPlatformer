@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6xobl37nywvf"]
 
 [ext_resource type="PackedScene" uid="uid://bit4mivv42fj0" path="res://player.tscn" id="1_0fygx"]
-[ext_resource type="PackedScene" uid="uid://osfep7qg461" path="res://maps.tscn" id="1_s7uxe"]
+[ext_resource type="PackedScene" uid="uid://dka1x03cdvd3j" path="res://levels.tscn" id="1_munwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlbh4"]
 size = Vector2(20, 692)
@@ -32,6 +32,6 @@ shape = SubResource("RectangleShape2D_ths3i")
 position = Vector2(1180, 340)
 shape = SubResource("RectangleShape2D_r4a8k")
 
-[node name="Maps" parent="." instance=ExtResource("1_s7uxe")]
+[node name="Levels" parent="." instance=ExtResource("1_munwv")]
 
 [node name="Player" parent="." instance=ExtResource("1_0fygx")]
