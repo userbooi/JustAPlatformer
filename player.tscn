@@ -40,19 +40,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6230l"]
-size = Vector2(46, 74)
+size = Vector2(34, 51)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-20, 591)
+position = Vector2(188, 533)
 script = ExtResource("1_akhm3")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(26.5, -233.5)
-scale = Vector2(0.5, 0.5)
+position = Vector2(2.5, -0.5)
+scale = Vector2(0.34, 0.34)
 sprite_frames = SubResource("SpriteFrames_60hj0")
-animation = &"Walk"
-frame_progress = 0.652671
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24.5, -233.5)
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_6230l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6xobl37nywvf"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xobl37nywvf"]
 
 [ext_resource type="PackedScene" uid="uid://bit4mivv42fj0" path="res://player.tscn" id="1_0fygx"]
 [ext_resource type="PackedScene" uid="uid://dka1x03cdvd3j" path="res://levels.tscn" id="1_munwv"]
+[ext_resource type="PackedScene" uid="uid://dbuq0el1sase7" path="res://door.tscn" id="3_aoy2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlbh4"]
 size = Vector2(20, 692)
@@ -33,5 +34,12 @@ position = Vector2(1180, 340)
 shape = SubResource("RectangleShape2D_r4a8k")
 
 [node name="Levels" parent="." instance=ExtResource("1_munwv")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1152, 648)
+
+[node name="Door" parent="." instance=ExtResource("3_aoy2v")]
+position = Vector2(1111, 395)
+scale = Vector2(0.4, 0.4)
 
 [node name="Player" parent="." instance=ExtResource("1_0fygx")]
