@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6xobl37nywvf"]
+[gd_scene load_steps=8 format=3 uid="uid://b6xobl37nywvf"]
 
 [ext_resource type="PackedScene" uid="uid://bit4mivv42fj0" path="res://player.tscn" id="1_0fygx"]
 [ext_resource type="PackedScene" uid="uid://dka1x03cdvd3j" path="res://levels.tscn" id="1_munwv"]
+[ext_resource type="Script" path="res://main.gd" id="1_xpths"]
 [ext_resource type="PackedScene" uid="uid://dbuq0el1sase7" path="res://door.tscn" id="3_aoy2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlbh4"]
@@ -14,6 +15,7 @@ size = Vector2(1187.5, 20)
 size = Vector2(53.5, 680)
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_xpths")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -43,3 +45,5 @@ position = Vector2(1111, 395)
 scale = Vector2(0.4, 0.4)
 
 [node name="Player" parent="." instance=ExtResource("1_0fygx")]
+
+[connection signal="advance" from="Door" to="." method="_on_door_advance"]
