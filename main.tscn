@@ -37,13 +37,13 @@ shape = SubResource("RectangleShape2D_r4a8k")
 
 [node name="Levels" parent="." instance=ExtResource("1_munwv")]
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1152, 648)
-
 [node name="Door" parent="." instance=ExtResource("3_aoy2v")]
 position = Vector2(1111, 395)
 scale = Vector2(0.4, 0.4)
 
 [node name="Player" parent="." instance=ExtResource("1_0fygx")]
+
+[node name="PositionGetter" type="Marker2D" parent="."]
+position = Vector2(977.935, 327)
 
 [connection signal="advance" from="Door" to="." method="_on_door_advance"]

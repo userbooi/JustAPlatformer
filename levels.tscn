@@ -7,6 +7,7 @@
 script = ExtResource("1_6isf7")
 
 [node name="Level1" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource("1_setcr")
 format = 2
 layer_0/name = "Background"
@@ -15,7 +16,6 @@ layer_1/name = "foreground"
 layer_1/tile_data = PackedInt32Array(589824, 65537, 0, 589825, 196609, 0, 589826, 196609, 0, 589827, 196609, 0, 589828, 196609, 0, 589832, 196609, 0, 589831, 196609, 0, 589830, 196609, 0, 589829, 196609, 0, 589833, 196609, 0, 589834, 196609, 0, 524299, 327681, 0, 589835, 1, 1, 589836, 1, 1, 589837, 1, 1, 589838, 1, 1, 589839, 1, 1, 589840, 1, 1, 589841, 1, 1, 524300, 196609, 0, 524301, 196609, 0, 524302, 196609, 0, 458767, 327681, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 458768, 196609, 0, 458769, 196609, 0)
 
 [node name="Level2" type="TileMap" parent="."]
-visible = false
 tile_set = ExtResource("1_setcr")
 format = 2
 layer_0/name = "Sky"
