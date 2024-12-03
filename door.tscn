@@ -52,6 +52,7 @@ script = ExtResource("1_mbxep")
 texture = ExtResource("1_f8i3n")
 
 [node name="DoorDoor" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("2_am4x3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

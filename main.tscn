@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6xobl37nywvf"]
+[gd_scene load_steps=11 format=3 uid="uid://b6xobl37nywvf"]
 
 [ext_resource type="PackedScene" uid="uid://bit4mivv42fj0" path="res://player.tscn" id="1_0fygx"]
 [ext_resource type="PackedScene" uid="uid://dka1x03cdvd3j" path="res://levels.tscn" id="1_munwv"]
@@ -8,11 +8,60 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlbh4"]
 size = Vector2(20, 692)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ths3i"]
-size = Vector2(1187.5, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4a8k"]
 size = Vector2(53.5, 680)
+
+[sub_resource type="Animation" id="Animation_eyrj0"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmx1h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5gsbd"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5llmr"]
+_data = {
+"RESET": SubResource("Animation_kmx1h"),
+"fade_in": SubResource("Animation_eyrj0"),
+"fade_out": SubResource("Animation_5gsbd")
+}
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_xpths")
@@ -22,12 +71,6 @@ script = ExtResource("1_xpths")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-10, 347)
 shape = SubResource("RectangleShape2D_nlbh4")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(593.25, 657)
-shape = SubResource("RectangleShape2D_ths3i")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
@@ -44,6 +87,17 @@ scale = Vector2(0.4, 0.4)
 [node name="Player" parent="." instance=ExtResource("1_0fygx")]
 
 [node name="PositionGetter" type="Marker2D" parent="."]
-position = Vector2(977.935, 327)
+position = Vector2(850, 764)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5llmr")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -633.0
+offset_right = 1201.0
+offset_bottom = 679.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="advance" from="Door" to="." method="_on_door_advance"]
